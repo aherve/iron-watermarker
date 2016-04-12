@@ -1,0 +1,5 @@
+*.swp
+test/*.pdf
+codeship.aes
+secret*
+.secret*
