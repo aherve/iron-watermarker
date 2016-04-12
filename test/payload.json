@@ -1,0 +1,9 @@
+{
+  "WATERMARK_TEXT":"TESTING TESTING TESTING",
+  "S3_INPUT_BUCKET":"my-bucket",
+  "S3_INPUT_FILENAME":"some-file-that-you-own.pdf",
+  "S3_INPUT_DIRNAME":"the-input-directory",
+  "S3_DEST_BUCKET":"my-bucket",
+  "S3_DEST_FILENAME":"testing-output.pdf",
+  "S3_DEST_DIRNAME":"test"
+}

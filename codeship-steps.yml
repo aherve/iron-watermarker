@@ -1,0 +1,27 @@
+- type: serial
+  name: "PREPARE IRON CONFIG ENV"
+  service: utils
+  steps:
+    - command: sh -c "echo $IRON_JSON > /data/iron_config.json"
+
+- type: serial
+  name: "TESTING"
+  service: worker
+  steps:
+    - command: true
+
+- type: push
+  tag: master
+  name: "PUSHING WORKER IMAGE"
+  service: worker
+  encrypted_dockercfg_path: dockercfg.encrypted
+  image_name: <your-docker-id>/watermark
+  image_tag: latest
+  registry: https://index.docker.io/v1/
+
+- type: serial
+  tag: master
+  name: "DEPLOYING ON IRON"
+  service: iron_cli
+  steps:
+    - command: register -config-file /data/iron_config.json -retries 3 -retries-delay 30 <your-docker-id>/watermark:latest

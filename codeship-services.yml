@@ -1,0 +1,22 @@
+worker:
+  encrypted_env_file: encrypted.env
+  build: .
+  volumes:
+    - ./test:/app/test
+  volumes_from:
+    - utils
+  environment:
+    - PAYLOAD_FILE=./test/payload.json
+    - CONFIG_FILE=/data/iron_config.json
+
+utils:
+  encrypted_env_file: encrypted.env
+  image: busybox
+  volumes:
+    - ./.secret_data:/data
+
+iron_cli:
+  encrypted_env_file: encrypted.env
+  image: iron/cli
+  volumes_from:
+    - utils
