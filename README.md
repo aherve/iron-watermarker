@@ -3,6 +3,8 @@ Dockerized image watermarking script. Can run locally, or be pushed to a iron.io
 
 This script will pull a file from a s3 bucket, watermark it, then re-upload the result to some other bucket.
 
+[See a complete description & explanation here](https://medium.com/@aherve/dockerized-background-image-processing-with-docker-and-iron-io-workers-6bb19e797584)
+
 ## Usage
 
 - copy `secret.env.sample` to `secret.env` and fill the file.
