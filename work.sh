@@ -13,8 +13,7 @@ echo "converting file"
 convert -density 100 ./orig.pdf \
   -fill "rgba(0,0,0,0.1)" \
   -pointsize 40 \
-  -gravity center -draw "rotate -30 text 5,0 'CONFIDENTIEL HUNTEED'" \
-  -gravity center -draw "rotate -30 text 5,60 '$WATERMARK_TEXT'" \
+  -gravity center -draw "rotate -30 text 5,0 '$WATERMARK_TEXT'" \
   ./result.pdf
 
 ############  REUPLOAD   ###########
